@@ -1,0 +1,38 @@
+<h1>Edit user data</h1>
+
+<%= form_for(@user) do |form| %>
+  
+  <div style="font-size: 200%; margin-bottom: 0.5em;">
+    <%= @user.name %>
+  </div>
+
+  <%= label_tag 'Edit name'%>
+  <%= form.text_field :name %><br/><br/>
+	
+    
+<%= form.fields_for :bills do |bill_fields|%>
+	
+	<div class="field">
+	<%# bill_fields.text_field :month%>	
+	<%= bill_fields.label :year %>
+	<%= bill_fields.text_field :year %>
+	<%= bill_fields.label :month %>
+	<%= bill_fields.text_field :month %>
+	<%= bill_fields.label :amount %>
+	<%= bill_fields.text_field :amount %>
+	<%= bill_fields.label :paid %>
+	<%= bill_fields.text_field :paid %>
+	<div class="last_paid">
+	<%= bill_fields.label :last_paid %>
+	<%= bill_fields.text_field :last_paid %>
+	</div>		
+	</div>
+<% end %>
+
+
+
+  <div class="actions">
+    <%= form.submit "Update" %>
+  </div>
+<% end %>
+

@@ -1,0 +1,18 @@
+<header ><% @logo= image_tag("att_logo.jpg", :size => "90x40", :alt => "Sample App", 			   :class => "round") %>
+
+	<%= link_to @logo, root_path %>	
+</header>
+
+<header>
+	
+  <nav class="round">
+    <ul>
+      <li><%= link_to "Home", root_path %></li>
+	  <li><%= link_to "Members", users_path %></li>
+	  <li><%= link_to "Add data", 'bills/new' %></li>
+	  <% unless params[:id]==nil %> 
+	  <li><%= link_to "Edit data", edit_user_path(params[:id])%>
+	  <% end %>
+    </ul> 
+  </nav>
+</header>

@@ -1,0 +1,37 @@
+<table class="profile" summary="Profile information">
+<tr>
+	<h2>
+		<%= @user.name %>
+	
+	
+	</h2>
+	<table >
+	<tr class ="label">
+		<td>Year</td>	
+		<td>Month</td>
+		<td>Amount</td>
+		<td>Paid</td>
+		<td>Last Payment</td>
+	</tr>
+	<% @bills.each do |bill| %>
+	<tr>
+		<td><%=bill.year%>		</td>
+		<td><%=bill.month%>  	</td>
+		<td><%= bill.amount %>	</td>
+		<% if bill.paid =="yes"%>
+			<td><%= bill.paid %></td>
+		<% else %>
+			<td class="no"><%= bill.paid %></td>
+		<% end %>
+		<td class="last"><%=bill.last_paid%></td>
+	</tr>
+	 <% end %>
+		
+	</table>
+</tr>	
+	
+	
+	
+	
+	
+</table>
