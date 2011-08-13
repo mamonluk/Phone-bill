@@ -10,7 +10,8 @@ Phone2::Application.routes.draw do
   resources :users
   #resources :bills
   
-  get "bills/new"
+  match 'bills/new' => 'bills#new'  , :as =>'bills_new'
+  
   match '/bills/create' => 'bills#create', :as =>'create_ticket'
   
   #get "bills/edit"
